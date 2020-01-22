@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/3b56dc2a5c.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>My Todo List</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Todo List</h1>
+    <p id="date"></p>
+    <!-- <form id="task-form"> -->
+      <div class="input-container">
+        <input type="text" name="task" id="task" placeholder="Enter a Task">
+        
+      </div>
+      <button class="btn" id="add-task">ADD TASK</button>
+    <!-- </form> -->
+    <h4 id="task-title">Tasks</h4>
+    <div class="input-container">
+      <input type="text" name="Filter" id="filter" placeholder="Type to Filter Tasks">
+    </div>
+    <ul class="collection"></ul>
+    <button class="clear-tasks btn">CLEAR TASKS</button>
+  </div>
+  <div class="modal">
+    <div id="result" class="modal-content">
+      <h1 class="text-win">Ooops! You must enter a task!</h1>
+    </div>
+  </div>
+
+
+  <div class="modal2">
+    <div id="result" class="modal-content">
+      <h1 class="text-win">Are you sure you want to clear</h1>
+      <button id="yesBTN" class="clear-tasks btn">Yes</button>
+      <button id="noBTN" class="clear-tasks btn">No</button>
+    </div>
+  </div>
+  
+
+  <script src="app.js"></script>
+</body>
+</html>
