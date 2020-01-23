@@ -7,6 +7,8 @@ const modal = document.querySelector('.modal');
 const yesBTN = document.querySelector('#yesBTN')
 const noBTN = document.querySelector('#noBTN')
 const modal2 = document.querySelector('.modal2')
+const closeModal = document.querySelector('.x')
+const closeModal2 = document.querySelector('.x1')
 
 
 loadEventListeners();
@@ -20,6 +22,8 @@ filter.addEventListener('keyup', filterTasks);
 window.addEventListener('click', clearModal);
 yesBTN.addEventListener('click', yesModal) /* delete these if modal 2 is no good */
 noBTN.addEventListener('click', noModal)
+closeModal.addEventListener('click', modalClose)
+closeModal2.addEventListener('click', modalClose2)
 }
 
 // /////////////// modals to ask user to confirm clear tasks
@@ -64,8 +68,13 @@ function addTask(e){
 function removeTask(e){
   if(e.target.parentElement.classList.contains('delete')){
     e.target.parentElement.parentElement.remove();
+    taskListUl.style.display = 'block'
+    
   }
   removeTasksfromLS(e.target.parentElement.parentElement);
+  
+  filter.value = ''
+
 }
 
 function clearTasks(){
@@ -86,8 +95,9 @@ function filterTasks(e){
       iterator.style.display = 'flex';
   }else{
     iterator.style.display = 'none';
-  }
+      }   
   })
+
 }
 
 function storeTasksLS(task){
@@ -156,4 +166,18 @@ const day = getDate.getDate();
 const date = document.getElementById('date').innerHTML = `Date: ${month}/${day}/${year}`;
 
 
+function modalClose(e){
+  if(e.target === closeModal){
+    modal2.style.display = 'none'
+  }
+}
 
+function modalClose2(e){
+  if(e.target === closeModal2){
+    modal.style.display = 'none'
+  }
+}
+
+
+
+// reload filter list by setting content to '' after deleting
